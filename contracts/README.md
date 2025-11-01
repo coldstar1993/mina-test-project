@@ -1,26 +1,14 @@
 # Mina zkApp: Contracts
+### just for feature test
 
-This template uses TypeScript.
+```bash
+cd contracts/
 
-## How to build
+npm i
 
-```sh
-npm run build
+npm run test-nori-token-controller
+
 ```
-
-## How to run tests
-
-```sh
-npm run test
-npm run testw # watch mode
-```
-
-## How to run coverage
-
-```sh
-npm run coverage
-```
-
 ## License
 
 [Apache-2.0](LICENSE)
