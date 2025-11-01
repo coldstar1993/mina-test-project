@@ -14,19 +14,20 @@
   "main": "build/src/index.js",
   "types": "build/src/index.d.ts",
   "scripts": {
-    "build": "tsc",
-    "buildw": "tsc --watch",
+    "build": "cd build/ && rm -rf ./* && tsc",
+    "buildw": "cd build/ && rm -rf ./* && tsc --watch",
     "coverage": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage",
     "format": "prettier --write --ignore-unknown **/*",
     "test": "npm run build && find build/src -name '*.test.js' -exec node --test {} \\;",
     "testw": "npm run build && find build/src -name '*.test.js' -exec node --test --watch {} \\;",
+    "test-nori-token-controller": "npm run build && node --test build/src/NoriTokenController.test.js",
     "lint": "npx eslint src/* --fix",
     "clear-cache": "npx rimraf cache/* !cache/README.md && npx rimraf cache.json && echo \"Cache cleared successfully!\""
   },
   "devDependencies": {
     "@babel/preset-env": "^7.16.4",
     "@babel/preset-typescript": "^7.16.0",
-    "@types/node": "^22.14.1",
+    "@types/node": "^22.18.13",
     "@typescript-eslint/eslint-plugin": "^5.5.0",
     "@typescript-eslint/parser": "^5.5.0",
     "eslint": "^8.7.0",
@@ -36,7 +37,7 @@
     "typescript": "^5.4.5"
   },
   "peerDependencies": {
-    "o1js": "^2.*"
+    "o1js": "2.10.0"
   },
   "engines": {
     "node": ">=18.14.0"
