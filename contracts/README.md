@@ -2,7 +2,6 @@
 ### just for feature test
 
 ```bash
-cd contracts/
 
 npm i
 
